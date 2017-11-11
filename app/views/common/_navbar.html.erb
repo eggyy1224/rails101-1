@@ -13,7 +13,7 @@
                   <li><%= link_to("登入", new_user_session_path) %></li>
                 <% else %>
                     <li style="margin-top: 15px;">
-                       Hi!<%= current_user.email %> 
+                       Hi! <%= current_user.email %> 
                     </li>
                     <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                   
