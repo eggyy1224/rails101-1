@@ -8,6 +8,7 @@
         <td>Description</td>
         <td>Post Count</td>
         <td>Last Update</td>
+        <td colspan="2"></td> 
       </tr>
     </th>
     <tbody>
@@ -15,9 +16,11 @@
         <tr>
           <td>#</td>
           <td><%= link_to group.title, group_path(group) %></td>
-          <td><%= group.description %></td>
+          <td><%= render_group_description(group) %></td>
           <td><%= group.posts.count %></td>
           <td><%= group.updated_at %></td>
+          <td><%= link_to "Edit", edit_group_path(group), class: "btn btn-default btn-xs" %></td>
+          <td><%= link_to "Delete", group_path(group), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %></td>
         </tr>
     </tbody>
     <% end %>
